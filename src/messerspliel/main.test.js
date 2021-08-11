@@ -1,5 +1,4 @@
 import { procOutcome, rollAction } from './main';
-import { roll } from './dice';
 
 test('want a good outcome', () => {
     expect(procOutcome(6)).toEqual('good');

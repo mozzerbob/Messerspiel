@@ -1,4 +1,4 @@
-import roll from './dice';
+import { roll } from './dice';
 
 export function rollAction(a) {
   let highest
@@ -6,7 +6,6 @@ export function rollAction(a) {
 
   let pop = false
   a.forEach(d => {
-    console.log(d)
     if (d.selected) {  
       d.face = roll(6);
       d.selected = false;

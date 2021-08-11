@@ -9,7 +9,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import './App.scss';
 import React from 'react';
 import { procOutcome, rollAction } from './messerspliel/main';
-import roll from './messerspliel/dice';
+import { roll } from './messerspliel/dice';
 
 const diceCnt = 6
 

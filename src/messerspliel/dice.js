@@ -1,3 +1,3 @@
-export default function roll(n) {
+export function roll(n) {
     return Math.floor(Math.random() * n) + 1;
 };
