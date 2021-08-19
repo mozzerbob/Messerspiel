@@ -8,8 +8,8 @@ import SentimentSatisfiedAltRoundedIcon from '@material-ui/icons/SentimentSatisf
 import InfoIcon from '@material-ui/icons/Info';
 import './App.scss';
 import React from 'react';
-import { procOutcome, rollAction } from './messerspliel/main';
-import { roll } from './messerspliel/dice';
+import { procOutcome, rollAction } from './messerspiel/main';
+import { roll } from './messerspiel/dice';
 
 const diceCnt = 6
 
@@ -113,7 +113,7 @@ class App extends React.Component {
             <button class="mdc-icon-button material-icons">save</button>
             <a href="https://ozbrowning.itch.io/messerspiel" target="_blank" rel="noopener noreferrer" ><button class="mdc-icon-button material-icons">info</button></a>
             <header className="App-header">
-              <h1 className="header">Messerspliel</h1>
+              <h1 className="header">Messerspiel</h1>
               {this.getOutcome()}
               <img src={logo} className="App-logo" alt="logo" />
               <p>
