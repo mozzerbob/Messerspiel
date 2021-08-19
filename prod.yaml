@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: messerspiel-pod
+spec:
+   containers:
+   - name: messerspiel-container01
+     image: messerspiel:latest
+     ports:
+     - containerPort: 3001
