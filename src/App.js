@@ -2,10 +2,6 @@ import logo from './assets/sword.svg';
 import bad from './assets/bad.svg';
 import mixed from './assets/mixed.svg';
 import good from './assets/good.svg';
-import SentimentDissatisfiedRoundedIcon from '@material-ui/icons/SentimentDissatisfiedRounded';
-import SentimentVeryDissatisfiedRoundedIcon from '@material-ui/icons/SentimentVeryDissatisfiedRounded';
-import SentimentSatisfiedAltRoundedIcon from '@material-ui/icons/SentimentSatisfiedAltRounded';
-import InfoIcon from '@material-ui/icons/Info';
 import './App.scss';
 import React from 'react';
 import { procOutcome, rollAction } from './messerspiel/main';
@@ -110,17 +106,17 @@ class App extends React.Component {
 
   render() {
     return <div className="App">
-            <button class="mdc-icon-button material-icons">save</button>
-            <a href="https://ozbrowning.itch.io/messerspiel" target="_blank" rel="noopener noreferrer" ><button class="mdc-icon-button material-icons">info</button></a>
+            <a href="https://ozbrowning.itch.io/messerspiel" target="_blank" rel="noopener noreferrer" >
+              <button class="mdc-icon-button material-icons info">info</button>
+            </a>
             <header className="App-header">
               <h1 className="header">Messerspiel</h1>
-              {this.getOutcome()}
-              <img src={logo} className="App-logo" alt="logo" />
+              { this.getOutcome() }
+              <img src={ logo } className="app-logo" alt="logo" />
               <p>
-                {this.displayDice()}
+                { this.displayDice() }
               </p>
-              <button className="button" type="button" name="doRoll" onClick={this.doRoll}>Roll</button>
-              {/* <button className="button" type="button" name="risk" onClick={this.risk}>Risk</button> */}
+              <button className="button" type="button" name="doRoll" onClick={ this.doRoll }>Roll</button>
             </header>
           </div>;
   };
