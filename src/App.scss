@@ -1,11 +1,6 @@
 $primary-color: #fff !default;
 $accent-color: #e33 !default;
 
-.App {
-  text-align: center;
-  background-color: #282c34;
-}
-
 @font-face {
   font-family: 'Dicier-Round-Light';
   src: local('Dicier-Round-Light'), url(../src/assets/fonts/Dicier-Round-Light.otf) format('opentype');
@@ -16,12 +11,36 @@ $accent-color: #e33 !default;
   src: local('Dicier-Round-Dark'), url(../src/assets/fonts/Dicier-Round-Dark.otf) format('opentype');
 }
 
-.app-logo {
-  height: 90vmin;
-  pointer-events: none;
-  opacity: 0;
-  position: absolute;
-  z-index: 2;
+
+.app {
+  text-align: center;
+  background-color: #282c34;
+
+  &__logo {
+    height: 90vmin;
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  &__dicetray{
+    margin: 2vmin;
+  }
+
+  &__link {
+    color: #61dafb;
+  }
 }
 
 .outcome-svg {
@@ -37,21 +56,11 @@ $accent-color: #e33 !default;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .app-logo {
-    animation: App-logo-spin 3s linear;
+  .app__logo {
+    animation: app__logo--fade 3s linear;
     animation-iteration-count: 1;
     z-index: 99;
   }
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .header {
@@ -60,11 +69,7 @@ $accent-color: #e33 !default;
   font-family: serif;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes app__logo--fade {
   0% { opacity: 1; }
   25% { opacity: 1; }
   50% { opacity: 1; }
@@ -87,7 +92,7 @@ $accent-color: #e33 !default;
   margin: 1.5vmin;
   padding: 0;
   text-align: center;
-  width: 6vmin;
+  width: 3.5vmin;
   color: $primary-color;
 
   &-risk {
@@ -107,22 +112,24 @@ $accent-color: #e33 !default;
 }
 
 .crement {
-  background: $primary-color;
-  border: 1px solid #999;
+  background: unset;
+  border: unset;
+  color: $primary-color;
   float: left;
-  font-size: 5vmin;
+  font-size: 3.5vmin;
   font-weight: bold;
-  height: 6vmin;
+  height: 5.5vmin;
+  top: 5.5vmin;
   margin: 1.5vmin;
   padding: 0;
   text-align: center;
-  width: 6vmin;
+  width: 5.5vmin;
   border-radius: 50%
 }
 
 .button {
   padding: 1.5vmin 10vmin;
-  margin: 1vmin .3vmin;
+  margin: .5vmin .3vmin;
   color: #222;
   font-family: sans-serif;
   text-transform: uppercase;
