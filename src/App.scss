@@ -1,5 +1,6 @@
 $primary-color: #fff !default;
 $accent-color: #e33 !default;
+$secondry-color: #33e !default;
 
 @font-face {
   font-family: 'Dicier-Round-Light';
@@ -108,6 +109,11 @@ $accent-color: #e33 !default;
   &-selected {
     @extend .square;
     color: $accent-color;
+  }
+
+  &-dead {
+    @extend .square;
+    color: $secondry-color;
   }
 }
 

@@ -38,12 +38,33 @@ class App extends React.Component {
   outcome = 'hello';
 
   doRoll = () => {
-    let highest = {};
+    let result = {};
     let a = this.state.dice.slice();
-    highest = rollAction(a)
-    this.outcome = procOutcome(highest?.face)
+    if (a.length === 0) a = this.dead()
+    result = rollAction(a)
+    if (result.lowest != null) {
+      this.outcome = procOutcome(result.lowest?.face)
+    } else {
+      this.outcome = procOutcome(result.highest?.face)
+    }
     this.setState({ dice: a });
   };
+
+  dead = () => {
+    return [{
+      key: 0,
+      face: roll(6),
+      risk: false,
+      selected: false,
+      dead: true
+    }, {
+      key: 1,
+      face: roll(6),
+      risk: false,
+      selected: false,
+      dead: true
+    }]
+  }
 
   getOutcome = () => {
     if (this.outcome === 'bad') {
@@ -93,7 +114,10 @@ class App extends React.Component {
     tray.push(<button className="crement" id="-" onClick={() => this.decrementD()}>-</button>);
     for (let d of this.state.dice) {
       if (!d.risk) {
-        if (!d.selected) {tray.push(<button className="square" id={d.key} onClick={() => this.selectD(d.key)}>{d?.face}</button>);}
+        if (!d.selected) {
+          if (!d.dead) tray.push(<button className="square" id={d.key} onClick={() => this.selectD(d.key)}>{d?.face}</button>);
+          else tray.push(<button className="square-dead" id={d.key} onClick={() => this.selectD(d.key)}>{d?.face}</button>);
+        }
         if (d.selected) {tray.push(<button className="square-selected" id={d.key} onClick={() => this.selectD(d.key)}>{d?.face}</button>);}
       } else if (d.risk) {
         if (!d.selected) {tray.push(<button className="square-risk" id={d.key} onClick={() => this.selectD(d.key)}>{d?.face}</button>);}
