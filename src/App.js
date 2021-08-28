@@ -128,6 +128,11 @@ class App extends React.Component {
     return tray;
   };
 
+  buttonText = () => {
+    if (this.state.dice.length !== 0) return 'Roll'
+    return 'Risk'
+  }
+
   render() {
     return <div className="app">
             <a href="https://ozbrowning.itch.io/messerspiel" target="_blank" rel="noopener noreferrer" >
@@ -140,7 +145,7 @@ class App extends React.Component {
               <div class="app__dicetray">
                 { this.displayDice() }
               </div>
-              <button className="button" type="button" name="doRoll" onClick={ this.doRoll }>Roll</button>
+              <button className="button" type="button" name="doRoll" onClick={ this.doRoll }>{this.buttonText()}</button>
             </header>
           </div>;
   };
