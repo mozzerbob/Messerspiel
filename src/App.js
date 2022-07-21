@@ -136,13 +136,13 @@ class App extends React.Component {
   render() {
     return <div className="app">
             <a href="https://ozbrowning.itch.io/messerspiel" target="_blank" rel="noopener noreferrer" >
-              <button class="mdc-icon-button material-icons info">info</button>
+              <button className="mdc-icon-button material-icons info">info</button>
             </a>
             <header className="app__header">
               <h1 className="header">Messerspiel</h1>
               { this.getOutcome() }
               <img src={ logo } className="app__logo" alt="logo" />
-              <div class="app__dicetray">
+              <div className="app__dicetray">
                 { this.displayDice() }
               </div>
               <button className="button" type="button" name="doRoll" onClick={ this.doRoll }>{this.buttonText()}</button>
